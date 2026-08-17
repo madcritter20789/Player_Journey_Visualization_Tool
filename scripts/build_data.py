@@ -69,8 +69,6 @@ def main() -> None:
             if not (0 <= px <= LOGICAL_MAP_SIZE and 0 <= py <= LOGICAL_MAP_SIZE):
                 invalid_points += 1
             timestamp_ms = int(timestamp.timestamp() * 1000)
-            # Raw match IDs are reused across at least two collection folders. The
-            # date-qualified key is the only safe identity for filters/playback.
             match_key = f'{date}|{match_id}'
             packed.append([map_name, date, match_key, user_id, bot, px, py, timestamp_ms, name])
             shard_rows[(map_name, date)].append([map_name, date, match_key, user_id, bot, px, py, timestamp_ms, name])

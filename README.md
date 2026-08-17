@@ -178,7 +178,7 @@ There are **8 event types** that describe what happened at each recorded moment:
 - Players enter a match, complete objectives, loot items, and must **extract** before it's too late
 - A **one-directional storm** pushes across the map, forcing players to move and extract before being consumed
 - Players fight other players and bots along the way
-- Matches contain a mix of **human players** and **bots** (AI-controlled opponents)
+- Matches contain a mix of **human players** and **bots** (computer-controlled opponents)
 - There are currently **3 maps** in rotation:
   - **Ambrose Valley** — the primary/most played map
   - **Grand Rift** — secondary map
