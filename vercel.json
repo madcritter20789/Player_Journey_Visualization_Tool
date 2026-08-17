@@ -1,0 +1,5 @@
+{
+  "installCommand": "pip install -r requirements.txt && pnpm install --frozen-lockfile=false",
+  "buildCommand": "python scripts/build_data.py && python scripts/verify_data.py && pnpm build",
+  "outputDirectory": "dist"
+}

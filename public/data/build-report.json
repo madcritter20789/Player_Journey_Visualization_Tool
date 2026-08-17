@@ -1,0 +1,21 @@
+{
+  "files_read": 1243,
+  "rows_written": 89104,
+  "invalid_coordinate_rows": 0,
+  "rows_by_map": {
+    "AmbroseValley": 61013,
+    "GrandRift": 6853,
+    "Lockdown": 21238
+  },
+  "events": {
+    "Position": 51347,
+    "Loot": 12885,
+    "BotKilled": 700,
+    "KilledByStorm": 39,
+    "BotKill": 2415,
+    "BotPosition": 21712,
+    "Kill": 3,
+    "Killed": 3
+  },
+  "raw_match_ids_spanning_dates": 1
+}
