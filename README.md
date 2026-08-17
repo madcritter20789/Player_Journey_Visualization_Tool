@@ -34,6 +34,8 @@ Open the local URL printed by Vite. Before a production build, run `python scrip
 
 Push the repository to GitHub and import it into Vercel. Vercel installs Python dependencies, runs the data build, then runs `pnpm build`; the included `vercel.json` publishes Vite's `dist/` folder. No secrets are required.
 
+**Live deployment:** [https://helpful-alpaca-8a4518.netlify.app/](https://helpful-alpaca-8a4518.netlify.app/)
+
 See [ARCHITECTURE.md](ARCHITECTURE.md) for design decisions, [INSIGHTS.md](INSIGHTS.md) for evidence-backed findings, and [WALKTHROUGH.md](WALKTHROUGH.md) for the evaluator walkthrough.
 
 ---
