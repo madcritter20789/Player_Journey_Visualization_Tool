@@ -28,7 +28,7 @@ function marker(ctx: CanvasRenderingContext2D, item: EventRow) {
 function JourneyMap({ map, rows, heatmap, playback, onEventSelect }: { map: string; rows: EventRow[]; heatmap: HeatmapMode; playback: number | null; onEventSelect: (event: EventRow | null) => void }) {
   const canvas = useRef<HTMLCanvasElement>(null); const drag = useRef({ active: false, moved: false, x: 0, y: 0, panX: 0, panY: 0 });
   const [imageFailed, setImageFailed] = useState(false); const [zoom, setZoom] = useState(1); const [pan, setPan] = useState({ x: 0, y: 0 }); const [hoverEvent, setHoverEvent] = useState<EventRow | null>(null);
-  const clampPan = (next: { x: number; y: number }, scale = zoom) => { const size = canvas.current?.clientWidth ?? 0; const limit = Math.max(0, size * (scale - 1)); return { x: Math.min(0, Math.max(-limit, next.x)), y: Math.min(0, Math.max(-limit, next.y)) }; };
+  const clampPan = (next: { x: number; y: number }, scale = zoom) => { const size = canvas.current?.clientWidth ?? 0; const limit = Math.max(0, size * (scale - 1) + (scale > 1 ? 48 : 0)); return { x: Math.min(0, Math.max(-limit, next.x)), y: Math.min(0, Math.max(-limit, next.y)) }; };
   useEffect(() => { setZoom(1); setPan({ x: 0, y: 0 }); }, [map]);
   useEffect(() => { setPan((current) => clampPan(current)); }, [zoom]);
   useEffect(() => {

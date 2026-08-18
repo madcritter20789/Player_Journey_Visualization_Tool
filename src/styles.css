@@ -35,7 +35,7 @@ select, label input:not([type="checkbox"]) { width: 100%; color: #f6efe8; backgr
   .topbar { flex: 0 0 auto; margin-bottom: 14px; }
   h1 { font-size: clamp(1.55rem, 2.4vw, 2.15rem); }
   .subhead { margin-top: 4px; font-size: .86rem; }
-  .layout { flex: 1 1 auto; min-height: 0; grid-template-columns: 360px minmax(0, 1fr); gap: 16px; }
+  .layout { flex: 1 1 auto; min-height: 0; grid-template-columns: 360px minmax(0, 1fr); gap: 8px; }
   .controls { min-height: 0; overflow: visible; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; gap: 0 14px; padding: 14px; }
   .control-group { min-width: 0; padding-bottom: 12px; margin-bottom: 12px; }
   .control-group:first-child { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 10px; }
@@ -49,12 +49,12 @@ select, label input:not([type="checkbox"]) { width: 100%; color: #f6efe8; backgr
   .hint { font-size: .66rem; margin: -2px 0 7px; }
   .secondary-button, .export-button { padding: 7px 9px; font-size: .72rem; }
   .workspace { min-height: 0; display: flex; flex-direction: column; }
-  .map-header { flex: 0 0 auto; width: 60%; max-width: 720px; align-self: center; padding: 0 2px 8px; }
+  .map-header { flex: 0 0 auto; width: 60%; max-width: 720px; align-self: flex-start; padding: 0 2px 8px; }
   .map-header p, .playback p { font-size: .74rem; }
   .metrics { gap: 5px; }
   .dataset-badge, .metrics span { padding: 6px 9px; font-size: .68rem; }
-  .map-frame { flex: 0 0 auto; min-height: 0; width: 60%; max-width: 720px; aspect-ratio: 1; align-self: center; border-radius: 11px; }
-  .legend, .playback, .event-inspector, .insights { width: 60%; max-width: 720px; align-self: center; }
+  .map-frame { flex: 0 0 auto; min-height: 0; width: 60%; max-width: 720px; aspect-ratio: 1; align-self: flex-start; border-radius: 11px; }
+  .legend, .playback, .event-inspector, .insights { width: 60%; max-width: 720px; align-self: flex-start; }
   .legend { flex: 0 0 auto; gap: 8px 12px; padding: 7px 3px 9px; font-size: .68rem; }
   .legend .symbol { font-size: .95rem; }
   .playback { flex: 0 0 auto; padding: 10px 13px; gap: 12px; }
