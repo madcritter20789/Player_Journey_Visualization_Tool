@@ -49,7 +49,7 @@ select, label input:not([type="checkbox"]) { width: 100%; color: #f6efe8; backgr
   .hint { font-size: .66rem; margin: -2px 0 7px; }
   .secondary-button, .export-button { padding: 7px 9px; font-size: .72rem; }
   .workspace { min-height: 0; display: flex; flex-direction: column; }
-  .map-header { flex: 0 0 auto; padding: 0 2px 8px; }
+  .map-header { flex: 0 0 auto; width: 60%; max-width: 720px; align-self: center; padding: 0 2px 8px; }
   .map-header p, .playback p { font-size: .74rem; }
   .metrics { gap: 5px; }
   .dataset-badge, .metrics span { padding: 6px 9px; font-size: .68rem; }
