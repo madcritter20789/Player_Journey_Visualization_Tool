@@ -48,20 +48,20 @@ select, label input:not([type="checkbox"]) { width: 100%; color: #f6efe8; backgr
   .event-grid { column-gap: 8px; }
   .hint { font-size: .66rem; margin: -2px 0 7px; }
   .secondary-button, .export-button { padding: 7px 9px; font-size: .72rem; }
-  .workspace { min-height: 0; display: flex; flex-direction: column; }
-  .map-header { flex: 0 0 auto; width: 60%; max-width: 720px; align-self: flex-start; padding: 0 2px 8px; }
+  .workspace { min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 350px; gap: 12px; align-items: start; }
+  .map-header { grid-column: 1; width: 100%; max-width: none; align-self: start; padding: 0 2px 8px; }
   .map-header p, .playback p { font-size: .74rem; }
   .metrics { gap: 5px; }
   .dataset-badge, .metrics span { padding: 6px 9px; font-size: .68rem; }
-  .map-frame { flex: 0 0 auto; min-height: 0; width: 60%; max-width: 720px; aspect-ratio: 1; align-self: flex-start; border-radius: 11px; }
-  .legend, .playback, .event-inspector, .insights { width: 60%; max-width: 720px; align-self: flex-end; }
-  .legend { flex: 0 0 auto; gap: 8px 12px; padding: 7px 3px 9px; font-size: .68rem; }
+  .map-frame { grid-column: 1; min-height: 0; width: min(100%, 720px); max-width: 720px; aspect-ratio: 1; justify-self: center; border-radius: 11px; }
+  .legend, .playback, .event-inspector, .insights { grid-column: 2; width: 100%; max-width: none; justify-self: stretch; align-self: start; }
+  .legend { gap: 8px 12px; padding: 12px; font-size: .68rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; }
   .legend .symbol { font-size: .95rem; }
-  .playback { flex: 0 0 auto; padding: 10px 13px; gap: 12px; }
+  .playback { padding: 10px 13px; gap: 12px; }
   .playback button { padding: 7px 11px; font-size: .76rem; }
   .playback output { font-size: .72rem; }
-  .event-inspector { flex: 0 0 auto; padding: 10px 13px; margin-bottom: 8px; }
-  .insights { flex: 0 0 auto; padding: 10px 0 0; }
+  .event-inspector { padding: 10px 13px; margin-bottom: 0; }
+  .insights { padding: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; }
   .section-heading { margin-bottom: 7px; }
   .section-heading > p { font-size: .68rem; }
   .insight-grid { gap: 8px; }
