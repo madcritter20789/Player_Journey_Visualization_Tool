@@ -36,10 +36,11 @@ select, label input:not([type="checkbox"]) { width: 100%; color: #f6efe8; backgr
   h1 { font-size: clamp(1.55rem, 2.4vw, 2.15rem); }
   .subhead { margin-top: 4px; font-size: .86rem; }
   .layout { flex: 1 1 auto; min-height: 0; grid-template-columns: 360px minmax(0, 1fr); gap: 16px; }
-  .controls { min-height: 0; overflow: hidden; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; gap: 0 14px; padding: 14px; }
+  .controls { min-height: 0; overflow: visible; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; gap: 0 14px; padding: 14px; }
   .control-group { min-width: 0; padding-bottom: 12px; margin-bottom: 12px; }
   .control-group:first-child { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 10px; }
   .control-group:first-child h2, .control-group:first-child .hint, .control-group:first-child .secondary-button { grid-column: 1 / -1; }
+  .control-group:nth-child(3) { grid-column: 1 / -1; }
   .control-group h2 { margin-bottom: 8px; }
   label { margin-bottom: 8px; font-size: .76rem; }
   select, label input:not([type="checkbox"]) { padding: 7px; font-size: .76rem; }
