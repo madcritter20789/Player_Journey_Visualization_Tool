@@ -57,7 +57,18 @@ function JourneyMap({ map, rows, heatmap, playback, onEventSelect }: { map: stri
   const closestEvent = (event: React.MouseEvent<HTMLCanvasElement>) => { const point = pointFromEvent(event); return rows.filter((row) => !MOVEMENT_EVENTS.has(row.event)).map((row) => ({ row, distance: Math.hypot(row.x - point.x, row.y - point.y) })).sort((a, b) => a.distance - b.distance)[0]; };
   const handleClick = (event: React.MouseEvent<HTMLCanvasElement>) => { if (drag.current.moved) return; const closest = closestEvent(event); onEventSelect(closest && closest.distance < 22 ? closest.row : null); };
   const handleHover = (event: React.MouseEvent<HTMLCanvasElement>) => { const closest = closestEvent(event); setHoverEvent(closest && closest.distance < 22 ? closest.row : null); };
-  return <div className="map-frame" aria-label={`${map} player journey map`} style={{ cursor: zoom > 1 ? 'grab' : 'default' }} onWheel={(event) => { event.preventDefault(); setZoom((value) => Math.min(3, Math.max(1, value + (event.deltaY < 0 ? .15 : -.15)))); }}>
+  const zoomAt = (event: React.WheelEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    const nextZoom = Math.min(3, Math.max(1, zoom + (event.deltaY < 0 ? .15 : -.15)));
+    if (nextZoom === zoom) return;
+    const rect = event.currentTarget.getBoundingClientRect();
+    const center = { x: rect.width / 2, y: rect.height / 2 };
+    const cursor = { x: event.clientX - rect.left - center.x, y: event.clientY - rect.top - center.y };
+    const nextPan = { x: cursor.x - ((cursor.x - pan.x) / zoom) * nextZoom, y: cursor.y - ((cursor.y - pan.y) / zoom) * nextZoom };
+    setPan(clampPan(nextPan, nextZoom));
+    setZoom(nextZoom);
+  };
+  return <div className="map-frame" aria-label={`${map} player journey map`} style={{ cursor: zoom > 1 ? 'grab' : 'default' }} onWheel={zoomAt}>
     <div className="map-layer" style={{ transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})` }} onPointerDown={(event) => { if (zoom <= 1) return; drag.current = { active: true, moved: false, x: event.clientX, y: event.clientY, panX: pan.x, panY: pan.y }; event.currentTarget.setPointerCapture(event.pointerId); }} onPointerMove={(event) => { if (!drag.current.active) return; const dx = event.clientX - drag.current.x; const dy = event.clientY - drag.current.y; if (Math.abs(dx) + Math.abs(dy) > 3) drag.current.moved = true; setPan(clampPan({ x: drag.current.panX + dx, y: drag.current.panY + dy })); }} onPointerUp={() => { drag.current.active = false; }}>
       {!imageFailed && <img src={MAP_IMAGES[map]} alt={`${map} minimap`} onError={() => setImageFailed(true)} />}{imageFailed && <div className="missing-map">Minimap image unavailable</div>}<canvas ref={canvas} onClick={handleClick} onMouseMove={handleHover} onMouseLeave={() => setHoverEvent(null)} aria-hidden="true" />
     </div>
