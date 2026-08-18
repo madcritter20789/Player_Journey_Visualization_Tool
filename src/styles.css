@@ -54,7 +54,8 @@ select, label input:not([type="checkbox"]) { width: 100%; color: #f6efe8; backgr
   .metrics { gap: 5px; }
   .dataset-badge, .metrics span { padding: 6px 9px; font-size: .68rem; }
   .map-frame { grid-column: 1; min-height: 0; width: min(100%, 720px); max-width: 720px; aspect-ratio: 1; justify-self: center; border-radius: 11px; }
-  .legend, .playback, .event-inspector, .insights { grid-column: 2; width: 100%; max-width: none; justify-self: stretch; align-self: start; }
+  .detail-sidebar { grid-column: 2; display: flex; flex-direction: column; gap: 10px; width: 100%; min-width: 0; }
+  .legend, .playback, .event-inspector, .insights { width: 100%; max-width: none; }
   .legend { gap: 8px 12px; padding: 12px; font-size: .68rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; }
   .legend .symbol { font-size: .95rem; }
   .playback { padding: 10px 13px; gap: 12px; }
