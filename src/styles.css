@@ -53,7 +53,8 @@ select, label input:not([type="checkbox"]) { width: 100%; color: #f6efe8; backgr
   .map-header p, .playback p { font-size: .74rem; }
   .metrics { gap: 5px; }
   .dataset-badge, .metrics span { padding: 6px 9px; font-size: .68rem; }
-  .map-frame { flex: 0 0 auto; min-height: 0; width: 100%; aspect-ratio: 1; border-radius: 11px; }
+  .map-frame { flex: 0 0 auto; min-height: 0; width: 60%; max-width: 720px; aspect-ratio: 1; align-self: center; border-radius: 11px; }
+  .legend, .playback, .event-inspector, .insights { width: 60%; max-width: 720px; align-self: center; }
   .legend { flex: 0 0 auto; gap: 8px 12px; padding: 7px 3px 9px; font-size: .68rem; }
   .legend .symbol { font-size: .95rem; }
   .playback { flex: 0 0 auto; padding: 10px 13px; gap: 12px; }
